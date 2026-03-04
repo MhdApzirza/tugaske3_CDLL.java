@@ -1,0 +1,27 @@
+---------------PROMPT 1-------------
+
+oke sekarang tugasnya versi Circular Doubly linked list
+
+Formatnya sama seperti tugas Linked List kemarin cuman bedanya kali ini menggunakan Circular Doubly Linked List 
+-Isinya: Nama dan nim 
+
+yang dimana Circular Doubly Linked List itu berdasarkan Struktur Memori Sama seperti Linked List (terpencar), namun bedanya setiap node membawa dua catatan alamat sekaligus (alamat sesudahnya dan alamat sebelumnya).
+
+Buat program (Java & Python) untuk simulasi teks berjalan berisi berita seperti yang sering tampil di televisi. Program menggunakan struktur data Circular Doubly Linked List. Program dilengkapi dengan fitur tambah dan hapus teks berita. Teks berita akan tampil secara berurutan berdasarkan urutan dalam linked list.
+
+MENU:
+1. Insert berita (berita baru selalu ditambahkan di akhir)
+2. Hapus berita (berdasarkan nomor urut)
+3. Tampilkan berita secara forward (teks berita akan tampil dari depan ke belakang dengan delay 3 detik antar berita)
+4. Tampilkan berita secara backward (teks berita akan tampil dari belakang ke depan dengan delay 3 detik antar berita)
+4. Tampil berita tertentu (berdasarkan nomor urut)
+5. Exit
+
+yang disubmit adalah:
+1. source code (*.java dan *.py / *.ipynb) jangan diZIP
+2. link video berisi demo program (gdrive/ github/ youtube atau yg lain)
+3. prompt AI dalam file teks (*.txt), jika menggunakan bantuan AI. Sebutkan tools AI yg digunakan.
+
+
+---------------PROMPT 2-------------
+tinggal improvisasi di bagian prompt dengan bahasa yang biasa saya gunakan sehari" untuk memper bagus kode hasil output menjadi lebih rapi
