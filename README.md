@@ -27,5 +27,5 @@ Memory: Menggunakan alokasi memori dinamis (terpencar) di mana setiap Node salin
 🎥 Video Demo
 Daftar operasi (Insert, Delete, & Display dengan Delay) menggunakan Circular Doubly Linked List:
 
-**[Nonton Video Demo](https://youtu.be/AdJOwvi4wU8?si=WRvGfc3zDDCVZoVD)**
+**[Nonton Video Demo](https://youtu.be/B086LKm60gQ?si=G1eGfzAMaBbiTvia)**
 *Klik gambar di atas untuk memutar video demo di YouTube @Muhammad Apzirza Rafi.*
