@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Kelas Node untuk menyimpan data dan pointer
+// Kelas Node untuk menyimpan data dan pointer (Dua arah: next dan prev)
 class Node {
     String nama, nim, berita;
     Node next, prev;
@@ -19,7 +19,7 @@ class CircularDoublyLinkedList {
     Node head = null;
     int size = 0;
 
-    // 1. Insert Berita (Selalu di akhir)
+    // 1. Insert Berita (Selalu di akhir memanfaatkan pointer prev dari head)
     public void insertBerita(String nama, String nim, String berita) {
         Node newNode = new Node(nama, nim, berita);
         if (head == null) {
@@ -66,40 +66,46 @@ class CircularDoublyLinkedList {
         System.out.println("Berita '" + curr.berita + "' telah dihapus.");
     }
 
-    // 3. Tampilkan Forward (Maju dengan delay 3 detik)
+    // 3. Tampilkan Forward (TANPA HENTI - Circular looping)
     public void tampilForward() {
         if (head == null) {
             System.out.println("Belum ada berita untuk ditampilkan.");
             return;
         }
-        System.out.println("\n--- RUNNING TEXT (FORWARD) ---");
+        System.out.println("\n--- RUNNING TEXT (FORWARD) - Putar Terus ---");
+        System.out.println("(Catatan: Program akan looping terus, tekan stop/restart untuk kembali)");
+        
         Node curr = head;
-        for (int i = 0; i < size; i++) {
+        while (true) { // Loop tanpa henti
             System.out.println("[" + curr.nama + " - " + curr.nim + "] Berita: " + curr.berita);
-            curr = curr.next;
+            curr = curr.next; // Bergerak ke depan
             try {
-                Thread.sleep(3000); // Jeda 3 detik
+                Thread.sleep(3000); // Jeda 3 detik per berita
             } catch (InterruptedException e) {
-                System.out.println("Error pada delay.");
+                System.out.println("Proses dihentikan.");
+                break;
             }
         }
     }
 
-    // 4. Tampilkan Backward (Mundur dengan delay 3 detik)
+    // 4. Tampilkan Backward (TANPA HENTI - Circular looping mundur)
     public void tampilBackward() {
         if (head == null) {
             System.out.println("Belum ada berita untuk ditampilkan.");
             return;
         }
-        System.out.println("\n--- RUNNING TEXT (BACKWARD) ---");
+        System.out.println("\n--- RUNNING TEXT (BACKWARD) - Putar Terus ---");
+        System.out.println("(Catatan: Program akan looping terus, tekan stop/restart untuk kembali)");
+        
         Node curr = head.prev; // Mulai dari Tail
-        for (int i = 0; i < size; i++) {
+        while (true) { // Loop tanpa henti
             System.out.println("[" + curr.nama + " - " + curr.nim + "] Berita: " + curr.berita);
-            curr = curr.prev;
+            curr = curr.prev; // Bergerak ke belakang
             try {
-                Thread.sleep(3000); // Jeda 3 detik
+                Thread.sleep(3000); // Jeda 3 detik per berita
             } catch (InterruptedException e) {
-                System.out.println("Error pada delay.");
+                System.out.println("Proses dihentikan.");
+                break;
             }
         }
     }
@@ -128,13 +134,13 @@ public class Main {
             System.out.println("\n=== MENU SIMULASI BERITA TV (CDLL) ===");
             System.out.println("1. Insert Berita");
             System.out.println("2. Hapus Berita (Nomor Urut)");
-            System.out.println("3. Tampilkan Forward (Delay 3s)");
-            System.out.println("4. Tampilkan Backward (Delay 3s)");
+            System.out.println("3. Tampilkan Forward (LOOPING SELAMANYA)");
+            System.out.println("4. Tampilkan Backward (LOOPING SELAMANYA)");
             System.out.println("5. Tampil Berita Tertentu");
             System.out.println("6. Exit");
             System.out.print("Pilih Menu: ");
             pilihan = input.nextInt();
-            input.nextLine(); // membersihkan buffer
+            input.nextLine(); // clear buffer
 
             switch (pilihan) {
                 case 1:
